@@ -5,7 +5,6 @@
  * Date: 10/13/15, 11:50 AM
  */
 
-// TODO: Change this namespace
 namespace CommentNot;
 
 
@@ -16,6 +15,7 @@ class SetupPlugin
     public function __construct()
     {
         $this->registerStylesAndScripts()->registerTextDomain();
+        new SettingsPage();
     }
 
     public function registerStylesAndScripts()
