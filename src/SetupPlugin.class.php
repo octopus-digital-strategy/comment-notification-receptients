@@ -6,7 +6,7 @@
  */
 
 // TODO: Change this namespace
-namespace BareBonesPlugin;
+namespace CommentNot;
 
 
 

@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugin name: Bare Bones WordPress Plugin
- * Plugin URI: https://github.com/octopus-digital-strategy/barebones-wp-plugin
- * Description: The most essential components for a WordPress plugin
+ * Plugin name: Comment Notification Receptients
+ * Plugin URI: https://github.com/octopus-digital-strategy/comment-notification-receptients
+ * Description: This plugin lets you add more emails that will receive the comments notification for this site.
  * Version: 0.1
- * Author: Page-Carbajal
- * Author URI: http://pagecarbajal.com
+ * Author: jcastro91
+ * Author URI: https://jorgecastro.mx
  */
 
 // No direct access to this file
@@ -17,4 +17,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 require_once('vendor/autoload.php');
 
 // Instance the Setup
-new \BareBonesPlugin\SetupPlugin();
+new \CommentNot\SetupPlugin();

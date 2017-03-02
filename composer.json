@@ -1,7 +1,10 @@
 {
     "autoload":{
         "psr-4":{
-            "BareBonesPlugin\\": "src/"
+            "CommentNot\\": "src/"
         }
+    },
+    "require": {
+        "page-carbajal/wpexpress": "^2.0"
     }
 }
