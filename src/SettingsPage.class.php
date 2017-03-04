@@ -15,24 +15,34 @@ class SettingsPage extends BaseSettingsPage
 {
     public function __construct()
     {
-        parent::__construct(__('Comment Notification Receptients', 'commentnot'));
+        parent::__construct(__('Comment Notification Recipients', 'commentnot'));
         parent::setCustomTemplatePath( SetupPlugin::getResourceDirectory('','templates') );
-        $this->getUsers();
-        $this->notificationEmails();
+        parent::setPageDescription(__('Select the specific administrators you want to send custom notifications or add custom emails in the text input below', 'commentnot'));
+        $this->customNotificationUsers();
+        $this->customNotificationEmails();
     }
 
-    public function notificationEmails()
+    public function customNotificationUsers()
     {
-        $this->fields->addTextInput('emails')->addLabel(__('Add the emails as CSV','commentnot'));
+        $users = $this->getUsers();
+
+        foreach ($users as $user) {
+            $this->fields->addCheckBox($user['ID'])->addLabel($user['display_name'] . ' ('. $user['user_email'] . ') ');
+        }
     }
 
-    public function getUsers()
+    public function customNotificationEmails()
+    {
+        $this->fields->addTextInput('emails')->addLabel(__('Add custom emails that do not have a user on the site as Comma Separated Values','commentnot'));
+    }
+
+    private static function getUsers()
     {
         $users = get_users(array(
             'role__in' => 'administrator',
-            'fields' => array('display_name', 'ID')
+            'fields' => array('display_name', 'ID', 'user_email')
         ));
 
-        return $users;
+        return json_decode(json_encode($users), true);
     }
 }
