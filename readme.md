@@ -14,4 +14,5 @@ Just install the plugin and go to the settings page so you can add all the email
 
 - Adding necesary plugin files.
 - Adding WPExpress.
-- Adding Settings Page for the plugin
+- Adding Settings Page for the plugin.
+- Creating a function to return all admin users
