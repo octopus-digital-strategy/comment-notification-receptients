@@ -18,6 +18,7 @@ Just install the plugin and go to the settings page so you can add all the email
 - Creating a function to return all admin users.
 - Showing all administrators using checkboxes on the frontend.
 - Establishing filters for comment moderation
+- Wrapping up the final function to merge the emails
 
 ###TODO
 

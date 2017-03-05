@@ -42,7 +42,10 @@ class CommentNotificationReceptients
 
         foreach ($users as $user){
             //TODO: Get if the checkbox is checked using getOptionValue function.
-            $a = $emails->getOptionValue($user['ID']);
+            $the_user = $emails->getOptionValue($user['ID']);
+            if ($the_user == 'checked' ){
+                $csv_emails[] = $the_user;
+            }
         }
 
         return $csv_emails;
