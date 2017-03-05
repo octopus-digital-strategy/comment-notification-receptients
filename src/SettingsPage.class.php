@@ -24,23 +24,23 @@ class SettingsPage extends BaseSettingsPage
 
     public function customNotificationUsers()
     {
-        $users = $this->getUsers();
+        $users = self::getUsers();
 
         foreach ($users as $user) {
-            $this->fields->addCheckBox($user['ID'])->addLabel($user['display_name'] . ' ('. $user['user_email'] . ') ');
+            $this->fields->addCheckBox($user['ID'])->setAttribute('name',$user['user_login'])->addLabel($user['display_name'] . ' ('. $user['user_email'] . ') ');
         }
     }
 
     public function customNotificationEmails()
     {
-        $this->fields->addTextInput('emails')->addLabel(__('Add custom emails that do not have a user on the site as Comma Separated Values','commentnot'));
+        $this->fields->addTextInput('csv_emails')->addLabel(__('Add custom emails that do not have a user on the site as Comma Separated Values','commentnot'));
     }
 
     private static function getUsers()
     {
         $users = get_users(array(
             'role__in' => 'administrator',
-            'fields' => array('display_name', 'ID', 'user_email')
+            'fields' => array('display_name', 'ID', 'user_email', 'user_login')
         ));
 
         return json_decode(json_encode($users), true);

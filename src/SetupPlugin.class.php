@@ -16,6 +16,7 @@ class SetupPlugin
     {
         $this->registerStylesAndScripts()->registerTextDomain();
         new SettingsPage();
+        new CommentNotificationReceptients();
     }
 
     public function registerStylesAndScripts()

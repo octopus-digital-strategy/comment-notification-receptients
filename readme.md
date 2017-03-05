@@ -17,3 +17,8 @@ Just install the plugin and go to the settings page so you can add all the email
 - Adding Settings Page for the plugin.
 - Creating a function to return all admin users.
 - Showing all administrators using checkboxes on the frontend.
+- Establishing filters for comment moderation
+
+###TODO
+
+-TODO: Get if the checkbox is checked using getOptionValue function.
