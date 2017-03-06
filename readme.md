@@ -13,6 +13,7 @@ Just install the plugin and go to the settings page so you can add all the email
 ###Version 0.2
 
 - Refactoring code to use javascript in the settings page
+- Creating the javascript code to add the correct IDs to the hidden input
 
 ###Version 0.1
 
