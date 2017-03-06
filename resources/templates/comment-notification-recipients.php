@@ -19,16 +19,30 @@
     </form>
 
     <script>
-        id = '';
+        jQuery(document).ready(function(){
+            var mails = jQuery('input[id=checked_users]').val();
+            var allMails = mails.split(',');
+            for(var i=0; i< allMails.length; i++){
+                jQuery('input[type=checkbox]').each(function(ix, item){
+                    if(jQuery(item).attr('email') == allMails[i]){
+                        jQuery(item).attr('checked', 'checked');
+                    }
+                });
+            }
+        });
+
+
+        emails = '';
         jQuery('input[type=checkbox]').change(function () {
-            document.getElementById('checked_users').value = '';
-            IDs = '';
+            jQuery('input[id=checked_users]').val('');
+            emails = '';
             jQuery('input[type=checkbox]').each(function(){
                 if (jQuery(this).prop('checked')){
-                    id = jQuery(this).prop('id');
-                    IDs = IDs.concat(id).concat(',');
+                    email = jQuery(this).attr('email');
+                    emails = emails.concat(email).concat(',');
                 }
             });
+            jQuery('input[id=checked_users]').val(emails);
         });
     </script>
 
