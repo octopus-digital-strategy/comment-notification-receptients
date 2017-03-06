@@ -19,14 +19,16 @@ class CommentNotificationReceptients
 
     public function registerFilters()
     {
-        add_filter( 'comment_moderation_recipients', array($this, 'commentModerationEmails'), 11, 2 );
-        add_filter( 'comment_notification_recipients', array($this, 'commentModerationEmails'), 11, 2 );
+        //add_filter( 'comment_moderation_recipients', array($this, 'commentModerationEmails'), 11, 2 );
+        //add_filter( 'comment_notification_recipients', array($this, 'commentModerationEmails'), 11, 2 );
+        self::customCommentsEmailsNotifications();
         return $this;
     }
 
     public function commentModerationEmails( $emails, $comment_id )
     {
-        return self::customCommentsEmailsNotifications();
+        $emails = self::customCommentsEmailsNotifications();
+        return $emails;
     }
 
     private static function customCommentsEmailsNotifications()

@@ -10,6 +10,10 @@ Just install the plugin and go to the settings page so you can add all the email
 
 ##Changelog
 
+###Version 0.2
+
+- Refactoring code to use javascript in the settings page
+
 ###Version 0.1
 
 - Adding necesary plugin files.
