@@ -30,7 +30,8 @@ class SettingsPage extends BaseSettingsPage
             $this->fields->addCheckBox($user['ID'])->setAttribute('email', $user['user_email'])->setAttribute('name',$user['user_login'])->addLabel($user['display_name'] . ' ('. $user['user_email'] . ') ');
         }
 
-        $this->fields->addHiddenInput('checked_users');
+        $this->fields->addHiddenInput('checked_users')->setAttribute('hidden');
+        //$this->fields->addTextInput('checked_users');
     }
 
     public function customNotificationEmails()
