@@ -37,7 +37,7 @@
             jQuery('input[id=checked_users]').val('');
             emails = '';
             jQuery('input[type=checkbox]').each(function(){
-                if (jQuery(this).prop('checked')){z
+                if (jQuery(this).prop('checked')){
                     email = jQuery(this).attr('email');
                     emails = ( emails.length > 0 ? emails.concat(',').concat(email) : email) ;
                 }
