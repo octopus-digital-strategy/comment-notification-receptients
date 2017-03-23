@@ -44,7 +44,9 @@ class CommentNotificationReceptients
             $checked_users = explode(',', $checked_users);
         }
 
-        $csv_emails = array_merge($csv_emails, $checked_users);
+        if (!empty($checked_users)){
+            $csv_emails = array_merge($csv_emails, $checked_users);
+        }
 
         //$siteAdminEmail = array( get_bloginfo('admin_email') );
 
